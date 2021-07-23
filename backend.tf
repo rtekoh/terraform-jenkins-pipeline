@@ -18,7 +18,4 @@ resource "aws_dynamodb_table" "dynamodb-terraform-lock" {
       type = "S"
    }
 
-   tags {
-     Name = "Terraform Lock Table"
-   }
-}
+
