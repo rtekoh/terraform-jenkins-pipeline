@@ -17,5 +17,6 @@ resource "aws_dynamodb_table" "dynamodb-terraform-lock" {
       name = "LockID"
       type = "S"
    }
+}
 
 
