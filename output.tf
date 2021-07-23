@@ -3,24 +3,9 @@ output "id" {
   value       = aws_instance.webserver.*.id
 }
 
-output "arn" {
-  description = "List of ARNs of instances"
-  value       = aws_instance.webserver.*.arn
-}
-
 output "availability_zone" {
   description = "List of availability zones of instances"
   value       = aws_instance.webserver.*.availability_zone
-}
-
-output "key_name" {
-  description = "List of key names of instances"
-  value       = aws_instance.webserver.*.key_name
-}
-
-output "public_dns" {
-  description = "List of public DNS names assigned to the instances. For EC2-VPC, this is only available if you've enabled DNS hostnames for your VPC"
-  value       = aws_instance.webserver.*.public_dns
 }
 
 output "public_ip" {
@@ -46,11 +31,6 @@ output "subnet_id" {
 output "instance_state" {
   description = "List of instance states of instances"
   value       = aws_instance.webserver.*.instance_state
-}
-
-output "ebs_block_device_volume_ids" {
-  description = "List of volume IDs of EBS block devices of instances"
-  value       = [for device in aws_instance.webserver.*.ebs_block_device : device.*.volume_id]
 }
 
 output "tags" {
